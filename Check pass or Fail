@@ -1,0 +1,14 @@
+#include<stdio.h>
+void main()
+{
+   int t;
+   printf("enter the Mark ?");
+   scanf("%d",&t);
+   
+   if(t>=40&&t<=100)
+   printf("pass");
+   else if(t<=40&&t>=1)
+   printf("fail");
+   else
+   printf("wrong number")
+}
