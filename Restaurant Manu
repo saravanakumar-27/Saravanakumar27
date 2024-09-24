@@ -1,0 +1,19 @@
+#include<stdio.h>
+void main()
+{
+    int meanu;
+    printf("Enter the meanu ");
+    scanf("%d",&meanu);
+    switch(meanu)
+    {
+    case 1:
+    printf("Pizza");
+    break;
+    case 2:
+    printf("Burger");
+    break;
+    case 3:
+    printf("pasta");
+    break;
+    }
+    }
