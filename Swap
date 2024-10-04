@@ -1,0 +1,12 @@
+#include<stdio.h>
+void main()
+{
+    int a,b,c;
+    scanf("%d %d",&a,&b);
+    printf("Enter the number");
+    c=a;
+    a=b;
+    b=c;
+    printf("\n%d",a);
+    printf("\n%d",b);
+}
