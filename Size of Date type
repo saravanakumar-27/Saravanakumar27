@@ -1,0 +1,20 @@
+#include<stdio.h>
+void main()
+{
+   int integertype;
+   char chartype;
+   float floattype;
+   double doubletype;
+   
+   printf("size of int is:%u bytes",sizeof(integertype));
+
+   printf("\nsize of char is:%u bytes",sizeof(chartype));
+   
+   printf("\nsize of float is:%u bytes",sizeof(floattype));
+   
+   printf("\nsize of double is:%u bytes",sizeof(doubletype));
+   
+}
+
+
+
