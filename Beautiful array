@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int N, L;
+
+    scanf("%d", &N);
+    scanf("%d", &L);
+
+    if (N <= 0 || N >= 10000 || L <= 0 || L >= 10000) {
+        printf("False\n");
+        return 0;
+    }
+
+    int *arr = (int *)malloc(L * sizeof(int));
+    int *seen = (int *)calloc(N + 1, sizeof(int));
+
+    for (int i = 0; i < L; i++) {
+        scanf("%d", &arr[i]);
+        if (arr[i] < 1 || arr[i] > N) {
+            printf("False\n");
+            free(arr);
+            free(seen);
+            return 0;
+        }
+        if (seen[arr[i]] == 1) {
+            printf("False\n");
+            free(arr);
+            free(seen);
+            return 0;
+        }
+        seen[arr[i]] = 1;
+    }
+
+    int is_ordered = 1;
+    for (int i = 0; i < L - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            is_ordered = 0;
+            break;
+        }
+    }
+
+    if (!is_ordered) {
+        printf("True\n");
+    } else {
+        printf("False\n");
+    }
+
+    free(arr);
+    free(seen);
+
+    return 0;
+}
