@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    char ch;
+    int i = 0;
+    int word_length = 0; 
+    int is_first_letter = 1; 
+    fgets(input, sizeof(input), stdin);
+
+    while ((ch = input[i]) != '\0' && ch != '\n') {
+        if (ch == ' ') {
+            if (word_length > 0) {
+                if (word_length == 2) {
+                    putchar(input[i - word_length] >= 'A' && input[i - word_length] <= 'Z' ? input[i - word_length] + 32 : input[i - word_length]);
+                } else if (word_length > 2) {
+                    putchar(input[i - word_length] >= 'a' && input[i - word_length] <= 'z' ? input[i - word_length] - 32 : input[i - word_length]);
+                }
+                word_length = 0; 
+            }
+        } else {
+            if (is_first_letter) {
+                is_first_letter = 0; 
+            }
+            word_length++; 
+        }
+        i++;
+    }
+
+    if (word_length > 0) {
+        if (word_length == 2) {
+            putchar(input[i - word_length] >= 'A' && input[i - word_length] <= 'Z' ? input[i - word_length] + 32 : input[i - word_length]);
+        } else if (word_length > 2) {
+            putchar(input[i - word_length] >= 'a' && input[i - word_length] <= 'z' ? input[i - word_length] - 32 : input[i - word_length]);
+        }
+    }
+
+    putchar('\n'); 
+    return 0;
+}
